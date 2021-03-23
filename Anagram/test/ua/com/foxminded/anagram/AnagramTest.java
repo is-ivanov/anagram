@@ -9,16 +9,17 @@ class AnagramTest {
 	final String ONLY_LETTERS_REVERSED = "dcba hgfe";
 	final String LETTERS_AND_OTHER = "a1bcd efg!h";
 	final String LETTERS_AND_OTHER_REVERSED = "d1cba hgf!e";
-	
+
 	
 	@Test
 	void testOnlyLetters() {
-		assertEquals(ONLY_LETTERS_REVERSED, Anagram.reverseWords(ONLY_LETTERS));
+		WordReverser wordsTest = new WordReverser();
+		assertEquals(ONLY_LETTERS_REVERSED, wordsTest.reverseWords(ONLY_LETTERS));
 	}
 	
 	@Test
 	void testLettersAndOther() {
-		assertEquals(LETTERS_AND_OTHER_REVERSED, Anagram.reverseWords(LETTERS_AND_OTHER));
+		WordReverser wordsTest = new WordReverser();
+		assertEquals(LETTERS_AND_OTHER_REVERSED, wordsTest.reverseWords(LETTERS_AND_OTHER));
 	}
-
 }
