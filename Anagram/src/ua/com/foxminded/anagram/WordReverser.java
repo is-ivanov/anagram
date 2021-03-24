@@ -1,10 +1,10 @@
 package ua.com.foxminded.anagram;
 
 public class WordReverser {
+	final String SEPARATOR_WORDS = " ";
 
 	public String reverseWords(String input) {
 		int i = 0;
-		final String SEPARATOR_WORDS = " ";
 		String inputWords[] = input.split(SEPARATOR_WORDS);
 		String outputWords[] = new String[inputWords.length];
 
@@ -28,7 +28,6 @@ public class WordReverser {
 				onlyLetterWord.insert(j, word.charAt(j));
 			}
 		}
-
 		return onlyLetterWord.toString();
 	}
 }
