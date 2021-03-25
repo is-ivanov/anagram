@@ -6,13 +6,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class AnagramTest {
-	final String ONLY_LETTERS = "abcd efgh";
-	final String ONLY_LETTERS_REVERSED = "dcba hgfe";
-	final String LETTERS_AND_OTHER = "a1bcd efg!h";
-	final String LETTERS_AND_OTHER_REVERSED = "d1cba hgf!e";
-	WordReverser wordsTest;
-	
-	
+	private static final String ONLY_LETTERS = "abcd efgh";
+	private static final String ONLY_LETTERS_REVERSED = "dcba hgfe";
+	private static final String LETTERS_AND_OTHER = "a1bcd efg!h";
+	private static final String LETTERS_AND_OTHER_REVERSED = "d1cba hgf!e";
+	private WordReverser wordsTest;
+
 	@BeforeAll
 	public void createObject() {
 		wordsTest = new WordReverser();
