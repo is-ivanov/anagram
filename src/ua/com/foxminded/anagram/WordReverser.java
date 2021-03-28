@@ -21,7 +21,7 @@ public class WordReverser {
         }
     }
 
-    public String reverseWord(String word) {
+    private String reverseWord(String word) {
         if (Objects.isNull(word)) {
             throw new IllegalArgumentException("Line is null");
         } else {
