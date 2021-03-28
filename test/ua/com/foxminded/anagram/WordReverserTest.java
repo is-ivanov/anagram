@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-class AnagramTest {
+class WordReverserTest {
 
     private static final String NULL = null;
     private static final String EMPTY_STRING = "";
@@ -29,9 +29,7 @@ class AnagramTest {
 
     private static WordReverser testPhrase;
 
-//    null (NPE), пустая строка(+), строка только из букв(+), строка только из цифр(+), строка только из
-//    спец символов(+), буквы+цифры(+), буквы+символы(+), цифры+символы(+),
-//    буквы+цифры+символы.
+//    null (NPE)
 
     @BeforeAll
     static void init() {
@@ -40,7 +38,7 @@ class AnagramTest {
 
     @Test
     void testNull() {
-        assertEquals(NULL, testPhrase.reverseWords(NULL));
+        assertThrows(IllegalArgumentException.class, () -> testPhrase.reverseWords(NULL));
     }
 
     @Test
