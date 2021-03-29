@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 class WordReverserTest {
 
-    private static final String NULL = null;
     private static final String MESSAGE_NULL_EXCEPTION = "Line is null";
     private static final String EMPTY_STRING = "";
 
@@ -40,7 +39,7 @@ class WordReverserTest {
     @DisplayName("test null input should output exception with text")
     void testNull() {
         Exception exception = assertThrows(IllegalArgumentException.class,
-                () -> testPhrase.reverseWords(NULL));
+                () -> testPhrase.reverseWords(null));
         assertEquals(MESSAGE_NULL_EXCEPTION, exception.getMessage());
     }
 
