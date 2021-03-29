@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 class WordReverserTest {
 
     private static final String NULL = null;
+    private static final String MESSAGE_NULL_EXCEPTION = "Line is null";
     private static final String EMPTY_STRING = "";
 
     private static final String ONLY_LETTERS = "abcd efgh";
@@ -36,9 +37,11 @@ class WordReverserTest {
     }
 
     @Test
-    @DisplayName ("test null input")
+    @DisplayName("test null input should output exception with text")
     void testNull() {
-        assertThrows(IllegalArgumentException.class, () -> testPhrase.reverseWords(NULL));
+        Exception exception = assertThrows(IllegalArgumentException.class,
+                () -> testPhrase.reverseWords(NULL));
+        assertEquals(MESSAGE_NULL_EXCEPTION, exception.getMessage());
     }
 
     @Test
@@ -50,7 +53,8 @@ class WordReverserTest {
     @Test
     @DisplayName("test input of a phrase only from letters")
     void testOnlyLetters() {
-        assertEquals(ONLY_LETTERS_REVERSED, testPhrase.reverseWords(ONLY_LETTERS));
+        assertEquals(ONLY_LETTERS_REVERSED,
+                testPhrase.reverseWords(ONLY_LETTERS));
     }
 
     @Test
@@ -62,30 +66,35 @@ class WordReverserTest {
     @Test
     @DisplayName("test input of a phrase only from special symbols")
     void testOnlySpecSymbols() {
-        assertEquals(ONLY_SPEC_SYMBOLS, testPhrase.reverseWords(ONLY_SPEC_SYMBOLS));
+        assertEquals(ONLY_SPEC_SYMBOLS,
+                testPhrase.reverseWords(ONLY_SPEC_SYMBOLS));
     }
 
     @Test
     @DisplayName("test input of a phrase from letters and numbers")
     void testLettersAndNumbers() {
-        assertEquals(LETTERS_AND_NUMBERS_REVERSED, testPhrase.reverseWords(LETTERS_AND_NUMBERS));
+        assertEquals(LETTERS_AND_NUMBERS_REVERSED,
+                testPhrase.reverseWords(LETTERS_AND_NUMBERS));
     }
 
     @Test
     @DisplayName("test input of a phrase from letters and special symbols")
     void testLettersAndSymbols() {
-        assertEquals(LETTERS_AND_SYMBOLS_REVERSED, testPhrase.reverseWords(LETTERS_AND_SYMBOLS));
+        assertEquals(LETTERS_AND_SYMBOLS_REVERSED,
+                testPhrase.reverseWords(LETTERS_AND_SYMBOLS));
     }
 
     @Test
     @DisplayName("test input of a phrase from numbers and special symbols")
     void testNumbersAndSymbols() {
-        assertEquals(NUMBERS_AND_SYMBOLS, testPhrase.reverseWords(NUMBERS_AND_SYMBOLS));
+        assertEquals(NUMBERS_AND_SYMBOLS,
+                testPhrase.reverseWords(NUMBERS_AND_SYMBOLS));
     }
 
     @Test
     @DisplayName("test input of a phrase from letters, numbers and special symbols")
     void testLettersAndOther() {
-        assertEquals(LETTERS_AND_OTHER_REVERSED, testPhrase.reverseWords(LETTERS_AND_OTHER));
+        assertEquals(LETTERS_AND_OTHER_REVERSED,
+                testPhrase.reverseWords(LETTERS_AND_OTHER));
     }
 }
