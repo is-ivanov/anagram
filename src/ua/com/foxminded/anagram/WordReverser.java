@@ -11,8 +11,8 @@ public class WordReverser {
             throw new IllegalArgumentException(MESSAGE_NULL_EXCEPTION);
         }
         int i = 0;
-        String inputWords[] = input.split(SEPARATOR_WORDS);
-        String outputWords[] = new String[inputWords.length];
+        String[] inputWords = input.split(SEPARATOR_WORDS);
+        String[] outputWords = new String[inputWords.length];
 
         for (String inputWord : inputWords) {
             outputWords[i] = reverseWord(inputWord);

@@ -3,7 +3,7 @@ package ua.com.foxminded.anagram;
 import java.util.Scanner;
 
 public class Anagram {
-
+    @SuppressWarnings({"squid:S106"})
     public static void main(String[] args) {
         String inputText;
 
